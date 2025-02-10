@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../script/cart.js" defer></script>
+    <link rel="stylesheet" href="../styles.css" />
+    <title>View Cart</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+          <div>
+            <h1>Fresh Express</h1>
+          </div>
+          <div class="nav-right">
+            <nav>
+              <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Pages/product.html">Products</a></li>
+                <li><a href="../pages/cart.html">Cart</a></li>
+                <li><a href="..pages/createaccount.html">Create Account</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <h3>Your cart items:</h3>
+      <hr />
+      <div id="app">
+        <table id="cart">
+          <tr>
+            <th class="width:5%"></th>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantiy</th>
+            <th>Total Price</th>
+          </tr>
+      </table>
+      </div>
+    <div id ="divbtm" class="divbottom">
+      <div style="width:70%;"><button id="emptyCart"><img src="../images/empty-cart.png" width="30px"></button></button></div>
+      <div id="Total" class="divTotal"></div>
+    </div>
+</body>
+</html>

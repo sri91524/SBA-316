@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../script/index.js" defer></script>
+    <link rel="stylesheet" href="../styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <title>Products</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div>
+          <h1>Fresh Express</h1>
+        </div>
+        <div class="nav-right">
+          <nav>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../Pages/product.html">Products</a></li>
+              <li><a href="../Pages/cart.html">Cart</a></li>
+              <li><a href="../Pages/createaccount.html">Create Account</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="containerProducts">
+      <div class="product">
+        <div class="product-det">
+          <img src="../images/apples.jpg" alt="apples" />
+          <h3>Rainier Organic Honeycrisp Apples</h3>
+          <p>$7.99/ea</p>
+        </div>
+        <div class="quantity-controls">          
+          <button data-id="quantity1" class="btnDec" ><i class="fas fa-minus"></i></button>
+          <input type="text" id="quantity1" class="quantity" value="0" readonly />
+          <button data-id="quantity1" class ="btnInc"><i class="fas fa-plus"></i></button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-det">
+          <img src="../images/banana.jpg" alt="banana"/>
+          <h3>Banana Bunch</h3>
+          <p>$1.99/ea</p>
+        </div>
+        <div class="quantity-controls">
+          <button data-id="quantity2" class="btnDec"><i class="fas fa-minus"></i></button>
+          <input type="text" id="quantity2" class="quantity" value="0" readonly />
+          <button data-id="quantity2" class ="btnInc"><i class="fas fa-plus"></i></button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-det">
+          <img src="../images/blueberry.jpg" alt="blueberry"/>
+          <h3>Jumboz Blueberries</h3>
+          <p>$9.99/ea</p>
+        </div>
+        <div class="quantity-controls">
+          <button data-id="quantity3" class="btnDec"><i class="fas fa-minus"></i></button>
+          <input type="text" id="quantity3" class="quantity" value="0" readonly />
+          <button data-id="quantity3" data-id="quantity3" class ="btnInc"><i class="fas fa-plus"></i></button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-det">
+          <img src="../images/eggs.jpg" alt="eggs"/>
+          <h3>Just Fresh Organic Brown eggs</h3>
+          <p>$9.99/ea</p>
+        </div>
+        <div class="quantity-controls">
+          <button data-id="quantity4" class ="btnDec"><i class="fas fa-minus"></i></button>
+          <input type="text" id="quantity4" class="quantity" value="0" readonly />
+          <button data-id="quantity4" class ="btnInc"><i class="fas fa-plus"></i></button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-det">
+          <img src="../images/Greek-Yogurt.jpg" alt="Greek-Yogurt" />
+          <h3>Greek Yogurt, Plain</h3>
+          <p>$6.99/ea</p>
+        </div>
+        <div class="quantity-controls">
+          <button data-id="quantity5" class ="btnDec"><i class="fas fa-minus"></i></button>
+          <input type="text" id="quantity5" class="quantity" value="0" readonly />
+          <button data-id="quantity5" class ="btnInc"><i class="fas fa-plus"></i></button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-det">
+          <img src="../images/ashirvadh.jpg" alt="ashirvadh"/>
+          <h3>Aashirvadh Wheat Flour</h3>
+          <p>$19.99/ea</p>
+        </div>
+        <div class="quantity-controls">
+          <button data-id="quantity6" class ="btnDec"><i class="fas fa-minus"></i></button>
+          <input type="text" id="quantity6" class="quantity" value="0" readonly />
+          <button data-id="quantity6" class ="btnInc"><i class="fas fa-plus"></i></button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-det">
+          <img src="../images/rice.jpg" alt="rice" />
+          <h3>Laxmi Raw Rice</h3>
+          <p>$16.99/ea</p>
+        </div>
+        <div class="quantity-controls">
+          <button data-id="quantity7" class ="btnDec"><i class="fas fa-minus"></i></button>
+          <input type="text" id="quantity7" class="quantity" value="0" readonly />
+          <button data-id="quantity7" class ="btnInc"><i class="fas fa-plus"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="addtocart">
+      <button id ="btnAddCart" class="btnCart">Add to Cart</button>
+    </div>
+  </body>
+</html>
