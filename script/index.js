@@ -6,6 +6,8 @@ const btnCollectionIncrease = document.querySelectorAll(".btnInc");
 const btnAddCart = document.getElementById("btnAddCart");
 const txtQty = document.querySelectorAll('input[type="text"]');
 
+//Decrease Quantity of product "-"" button
+
 btnCollectionDecrease.forEach(btnDec => {    
     btnDec.addEventListener('click', function(event) {
     event.preventDefault();
@@ -20,6 +22,8 @@ btnCollectionDecrease.forEach(btnDec => {
   });
 });
 
+//Increase quantity of product "+" button
+
 btnCollectionIncrease.forEach(btnInc => {    
     btnInc.addEventListener('click', function(event) {
     event.preventDefault();
@@ -31,8 +35,7 @@ btnCollectionIncrease.forEach(btnInc => {
   });
 });
 
-
-
+//Add to cart button
 btnAddCart.addEventListener("click", function(e){
     let currUserProduct = [];
     //ToDo -- R004 -- Iterate over a collection of elements to accomplish some task.
@@ -47,12 +50,12 @@ btnAddCart.addEventListener("click", function(e){
             currUserProduct.push({productName: prodName, price:price, quantity:qty});            
         }
     });
-    
-    console.log(currUserProduct);
+    // save product details in local storage for populating the page on refresh
     if(currUserProduct.length > 0){
         localStorage.setItem("currUser", JSON.stringify(currUserProduct)); 
     }
     //ToDo --R012-- Use at least two Browser Object Model (BOM) properties or methods.
+    //redirect to cart page
     window.location.href = "cart.html"; 
 });
 

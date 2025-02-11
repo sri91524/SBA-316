@@ -12,7 +12,7 @@ const errDisplay = document.getElementById("errorDisplay");
 const ul = document.createElement("ul");
 
 let errors = [];
-
+//on focus - display validation messages below the form elements
 // ToDo -- R011 --Register at least two different event listeners and create the associated event handler functions.
 username.addEventListener('focus', function() {    
     document.getElementById('name-validation').classList.add('active');
@@ -47,6 +47,8 @@ zip.addEventListener('focus', function() {
 // ToDo -- R014 -- Include at least one form and/or input with DOM event-based validation. (This can be the same form or input as the one above, but should include event-based validation in addition to the HTML attribute validation.)
 form.addEventListener("submit", ValidateRegister);
 
+//-----------------------------------------------------------------
+//onclick of CreateAccount button validate form fields
 function ValidateRegister(e){
     e.preventDefault();
     ul.innerHTML ="";
@@ -110,6 +112,7 @@ function ValidateRegister(e){
 }
 
 //-------------------------------------
+//validating password & confirm password
 function ValidatePassword(Password, passwordType)
 {
     const strPassword = "password";
@@ -146,12 +149,14 @@ function ValidatePassword(Password, passwordType)
 }
 
 //------------------------
+//to check password valid based on pattern
 function isValidPassword(password)
 {
     const pattern = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[-+_!@#$%^&*()|:<>.,?]).+$");
     return pattern.test(password);
 }
 
+//to check email valid based on pattern
 function isValidEmail(email) {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return regex.test(email);

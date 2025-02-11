@@ -22,6 +22,7 @@ if(!JSON.parse(localStorage.getItem("currUser"))){
 }
 else
 {
+    //to display product details in view cart page
     currUserProduct.forEach(items =>{
         const prodName = items.productName;
         const unitPrice = items.price;
@@ -63,6 +64,7 @@ else
     total.textContent = `Total before taxes: $${amount.toFixed(2)}`;
 }
 
+//on delete of each product row
 function deleteRow(row, pName){
     let i = row.parentNode.parentNode.rowIndex;  
     table.deleteRow(i); 
@@ -91,6 +93,7 @@ function deleteRow(row, pName){
     }
 }
 
+//on click of empty cart remove from local storage and display empty cart message
 btnEmptyCart.addEventListener("click", function(e){
 
     // ToDo -- R012 --Use at least two Browser Object Model (BOM) properties or methods.
@@ -103,5 +106,10 @@ btnEmptyCart.addEventListener("click", function(e){
         table.style.display ="none";
         app.innerHTML ="<h2>Your cart is empty.  Continue Shopping !!</h2>";
     }
+});
+
+btnProceed.addEventListener("click", function(e){
+    window.location.href = "createaccount.html";
+
 });
 
