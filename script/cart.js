@@ -7,6 +7,7 @@ const total = document.getElementById("Total");
 const divBottom = document.getElementById("divbtm");
 let amount = 0;
 
+// ToDo -- R007 -- Use the DocumentFragment interface or HTML templating with the cloneNode method to create templated content. 
 const frag = new DocumentFragment();
 
 let currUserProduct = JSON.parse(localStorage.getItem("currUser"));
@@ -14,7 +15,8 @@ console.log(currUserProduct);
 
 if(!JSON.parse(localStorage.getItem("currUser"))){      
     table.style.display ="none";    
-    divBottom.style.display ="none";   
+    divBottom.style.display ="none";  
+    //ToDo -- R008-- Modify the HTML or text content of at least one element in response to user interaction using innerHTML, innerText, or textContent. 
     total.textContent = "";       
     app.innerHTML ="<h2>Your cart is empty.  Continue Shopping !!</h2>";
 }
@@ -25,6 +27,8 @@ else
         const unitPrice = items.price;
         const quantity = items.quantity;
         const totalPrice = parseFloat(unitPrice * quantity);
+
+        //ToDo --R005 -- Create at least one element using createElement.
     
         const tr = document.createElement("tr");
 
@@ -52,6 +56,8 @@ else
 
         frag.appendChild(tr);   
     });
+
+    //ToDo--R006 --Use appendChild and/or prepend to add new elements to the DOM.
     table.appendChild(frag);
     console.log(amount);
     total.textContent = `Total before taxes: $${amount.toFixed(2)}`;
@@ -76,6 +82,7 @@ function deleteRow(row, pName){
     }
     else
     {
+        //ToDo -- R009 - Modify the style and/or CSS classes of an element in response to user interactions using the style or classList properties.
         localStorage.removeItem("currUser");
         total.textContent = "";     
         divBottom.style.display ="none";
@@ -85,6 +92,8 @@ function deleteRow(row, pName){
 }
 
 btnEmptyCart.addEventListener("click", function(e){
+
+    // ToDo -- R012 --Use at least two Browser Object Model (BOM) properties or methods.
     const confirmUser = window.confirm("Your cart will be emptied. Do you want to proceed?");
     if(confirmUser)
     {

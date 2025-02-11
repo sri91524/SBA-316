@@ -13,7 +13,7 @@ const ul = document.createElement("ul");
 
 let errors = [];
 
-
+// ToDo -- R011 --Register at least two different event listeners and create the associated event handler functions.
 username.addEventListener('focus', function() {    
     document.getElementById('name-validation').classList.add('active');
 });
@@ -43,19 +43,26 @@ zip.addEventListener('focus', function() {
 });
 
 //-------------------------------------------------------
-
+// ToDo -- R011 --Register at least two different event listeners and create the associated event handler functions.
+// ToDo -- R014 -- Include at least one form and/or input with DOM event-based validation. (This can be the same form or input as the one above, but should include event-based validation in addition to the HTML attribute validation.)
 form.addEventListener("submit", ValidateRegister);
 
 function ValidateRegister(e){
     e.preventDefault();
-    errDisplay.innerHTML ="";
+    ul.innerHTML ="";
+    errors = [];
 
-    const regex = /^[A-Za-z\s]+$/; 
+    console.log(errors);
+    console.log(errDisplay.innerHTML);
+
+    const regex = /^[A-Za-z\s]+$/;          //name validation
+    const zipCodeRegex = /^[0-9]{5}(?:-[0-9]{4})?$/;
     
     const inputUserName = username.value.trim();
     const inputEmail= email.value.trim();
     const inputPassword = password.value.trim();
     const inputPasswordCheck = passwordCheck.value.trim();   
+    const inputZip = zip.value.trim();
 
     strErrMsg = "The username cannot contain any special characters or numbers."; 
     if(!regex.test(inputUserName))
@@ -73,6 +80,13 @@ function ValidateRegister(e){
     ValidatePassword(inputPassword, "password");     
     ValidatePassword(inputPasswordCheck,"passwordcheck");
 
+    strErrMsg = "Invalid zip code. Please enter valid 5 digit or Zip-4 digit code"; 
+    if(!zipCodeRegex.test(inputZip))
+    {   
+        errors.push(strErrMsg);
+        zip.focus();              
+    }
+
     if(errors.length > 0)    {
         // errDisplay.innerHTML = errors.join("<br>");
         errors.forEach(item => {
@@ -81,14 +95,15 @@ function ValidateRegister(e){
             ul.appendChild(li);
         });
         errDisplay.appendChild(ul);
-
+        //ToDo -- R009 --Modify the style and/or CSS classes of an element in response to user interactions using the style or classList properties.
+        //ToDo -- R010-- Modify at least one attribute of an element in response to user interaction.
         errDisplay.setAttribute("style","display:block");
         errDisplay.setAttribute("style","color:red"); 
         errDisplay.classList.add("error-message");       
     }
     else{
         form.reset();
-        errDisplay.innerHTML ="";
+        ul.innerHTML ="";
         errDisplay.setAttribute("style","display:none");
         alert("Registered Succesfully!!")
     }

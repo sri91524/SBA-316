@@ -1,5 +1,8 @@
+//ToDo --R002 -- Cache at least one element using querySelector or querySelectorAll.
 const btnCollectionDecrease = document.querySelectorAll(".btnDec");
 const btnCollectionIncrease = document.querySelectorAll(".btnInc");
+
+//ToDo --R001 -- Cache at least one element using selectElementById.
 const btnAddCart = document.getElementById("btnAddCart");
 const txtQty = document.querySelectorAll('input[type="text"]');
 
@@ -32,10 +35,11 @@ btnCollectionIncrease.forEach(btnInc => {
 
 btnAddCart.addEventListener("click", function(e){
     let currUserProduct = [];
-    txtQty.forEach(itemQty => {
-        
+    //ToDo -- R004 -- Iterate over a collection of elements to accomplish some task.
+    txtQty.forEach(itemQty => {        
         if(parseInt(itemQty.value) > 0)
-        {           
+        {         
+            //TODo --R003 -- Use the parent-child-sibling relationship to navigate between elements at least once (firstChild, lastChild, parentNode, nextElementSibling, etc.).  
             const prodName = itemQty.parentNode.previousElementSibling.querySelector("img").alt;
             const priceElement = itemQty.parentNode.previousElementSibling.children[2].textContent;
             const price =priceElement.substring(1,priceElement.indexOf("/"));
@@ -48,6 +52,7 @@ btnAddCart.addEventListener("click", function(e){
     if(currUserProduct.length > 0){
         localStorage.setItem("currUser", JSON.stringify(currUserProduct)); 
     }
+    //ToDo --R012-- Use at least two Browser Object Model (BOM) properties or methods.
     window.location.href = "cart.html"; 
 });
 
