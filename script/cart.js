@@ -1,6 +1,7 @@
 const table = document.getElementById("cart");
 const app =document.getElementById("app");
 const btnEmptyCart = document.getElementById("emptyCart");
+
 btnEmptyCart.classList.add("btnempty");
 const total = document.getElementById("Total");
 const divBottom = document.getElementById("divbtm");
